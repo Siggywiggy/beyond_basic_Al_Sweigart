@@ -62,7 +62,7 @@ def binarySearch(needle, haystack):
     endIndex = len(haystack) - 1                    # 1 step
 
     haystack.sort()                                 # n * log^2 n
-    while start <= end:                             # log^2 n
+    while startIndex <= endIndex:                             # log^2 n
         midIndex = (startIndex + endIndex) // 2     # 1 step
         if haystack[midIndex] == needle:            # 1 step
             # Found the needle.
@@ -70,7 +70,7 @@ def binarySearch(needle, haystack):
         elif needle < haystack[midIndex]:           # 1 step
             # Search the previous half.
             endIndex = midIndex - 1                 # 1 step
-        elif needle > haystack[mid]:                # 1 step
+        elif needle > haystack[midIndex]:                # 1 step
             # Search the latter half.
             startIndex = midIndex + 1               # 1 step
 
