@@ -11,7 +11,7 @@ def main():
     if input('Use mini board? Y/N: ').lower().startswith('y'):
         gameBoard = MiniBoard()  # Create a MiniBoard object.
     else:
-        gameBoard = HintBoard()  # Create a TTTBoard object.
+        gameBoard = HybridBoard()  # Create a TTTBoard object.
     currentPlayer, nextPlayer = X, O  # X goes first, O goes next.
 
     while True:
@@ -130,6 +130,9 @@ class HintBoard(TTTBoard):
             boardStr += '\nO can win in one more move.'
         self._spaces = originalSpaces
         return boardStr
+
+class HybridBoard(HintBoard, MiniBoard):
+    pass
 
 
 if __name__ == '__main__':
